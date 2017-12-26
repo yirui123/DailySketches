@@ -19,15 +19,15 @@ function draw() {
   let x = r * cos(phi) * cos(theta);
   let y = r * cos(phi) * sin(theta);
   let z = r * sin(phi);
-  stroke(r, theta, 155, 155);
+  stroke(0);
   var dot = new p5.Vector(x, y, z);
   Knots.push(dot);
 
-  beta += 0.001;
+  beta += 0.05;
 
-  stroke(r, theta, 105, 155);
+  stroke(r / 2, theta, 155);
   beginShape();
-  for (var i = 0; i < Knots.length; i++) {
+  for (var i = 0; i < Knots.length * 10; i++) {
     vertex(x, y, z);
     vertex(i.x, i.y, i.z);
   }
