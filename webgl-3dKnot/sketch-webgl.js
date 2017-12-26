@@ -1,7 +1,7 @@
-var angle = 1;
-var beta = 1;
-let Knots = [];
-
+// knots source: http://paulbourke.net/geometry/knots/
+var angle = 0;
+var beta = 0;
+var Knots = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
@@ -9,31 +9,31 @@ function setup() {
 }
 
 function draw() {
-  camera(0, 0, (height / 2.0) / tan(PI * 30.0 / 180.0), 0, 0, 0, 0, 1, 0);
-  // translate(width / 2, height / 2, 0);
+  // background(0);
+  translate(width / 12, height / 12);
+  rotateY(angle);
+  rotateX(angle);
+  rotateZ(angle);
+  angle += 0.003;
 
+  var r = 200 * (1.2 * 0.6 * sin(0.5 * PI + 6 * beta)) * beta;
+  var theta = 10 * beta;
+  var phi = 0.2 * PI * sin(12 * beta);
+  var x = r * cos(phi) * cos(theta);
+  var y = r * cos(phi) * sin(theta);
+  var z = r * sin(phi);
 
-  let r = 100 * (0.8 + 1.6 * sin(6 * beta));
-  let theta = 2 * beta;
-  let phi = 0.6 * PI * sin(12 * beta);
-  let x = r * cos(phi) * cos(theta);
-  let y = r * cos(phi) * sin(theta);
-  let z = r * sin(phi);
-  stroke(0);
-  var dot = new p5.Vector(x, y, z);
-  Knots.push(dot);
+  Knots.push(new p5.Vector(x, y, z));
+  beta += 0.01;
 
-  beta += 0.05;
-
-  stroke(r / 2, theta, 155);
+  noFill();
+  stroke(255, r, 255);
+  strokeWeight(1);
   beginShape();
-  for (var i = 0; i < Knots.length * 10; i++) {
-    vertex(x, y, z);
-    vertex(i.x, i.y, i.z);
-  }
+  vertex(x, y, z);
+  // for (var i = 0; i < Knots.length; i++) {
+  //   vertex(i.x, i.y, i.z);
+  //   // print(x, y, z);
+  // }
   endShape();
-
-  rotateY(y);
-  rotateX(x);
-  rotateZ(z);
 }

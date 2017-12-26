@@ -37,8 +37,6 @@ function draw() {
   let z = r * sin(phi);
 
   normalMaterial();
-  // directionalLight();
-  // ambientMaterial(131, 4, 164);
 
   translate(width / 2 - 100, height / 2 - 100, 0);
   rotateZ(frameCount * 0.002);
