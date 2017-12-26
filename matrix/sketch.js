@@ -25,7 +25,7 @@ function setup() {
 }
 
 function draw() {
-  background(0, 105);
+  background(0, 205);
   // image(bgImg, 0, 0, width, height);
   // tint(255, 25);
   // stream.render();
@@ -76,7 +76,7 @@ function Symbol(x, y, speed, first, last) {
 function Stream() {
   this.symbols = [];
   this.totalSymbols = round(random(10, 50));
-  this.speed = round(random(1, 10));
+  this.speed = round(random(1, 5));
   this.generateSymbols = function(x, y) {
     // var y = 0;
     // var x = width / 2;
@@ -87,7 +87,7 @@ function Stream() {
       symbol.setToRandomSymbol();
       this.symbols.push(symbol);
       y -= symbolSize * 2;
-      // x += symbolSize;
+      x += symbolSize * 2;
       first = false;
       last = false;
     }
