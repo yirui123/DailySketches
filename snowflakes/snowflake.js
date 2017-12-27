@@ -1,6 +1,6 @@
 function getRandomSize() {
   let r = pow(random(0, 1), 5);
-  return constrain(r * 36, 2, 26);
+  return constrain(r * 36, 3, 18);
   // let r = randomGaussian() * 2.5;
   // return constrain(abs(r * r), 2, 36);
   // while (true) {
@@ -55,12 +55,12 @@ class Snowflake {
   pileUp() {
     for (let i = snow.length - 1; i >= 0; i--) {
       if (snow[i].offScreen()) {
-        if (this.r > 5) {
+        if (this.r >= 5) {
           this.pos.y = height - this.r;
         } else if (snow.length < 500) {
           snow.splice(i, 10);
         } else {
-          snow.splice(i, 100);
+          snow.splice(i, 200);
         }
       }
     }
