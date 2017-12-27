@@ -1,18 +1,16 @@
 var symbol;
 var symbolSize = 18;
 var streams = [];
-// var bgImg;
+var data;
+
+function preload() {
+  data = loadJSON("cats.json");
+}
 
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   background(0);
-  // bgImg = loadImage("assets/bg.jpeg");
-  // symbol = new Symbol(width/2, 0, random(5,10));
-  // symbol.setToRandomSymbol();
-
   textSize(symbolSize);
-  // stream = new Stream();
-  // stream.generateSymbols();
   var x = 0;
   // var y = 0;
   for (var i = 0; i <= width / symbolSize; i++) {
@@ -21,14 +19,17 @@ function setup() {
     streams.push(stream);
     x += symbolSize * 2;
   }
-
 }
 
 function draw() {
+<<<<<<< HEAD
   background(0, 205);
   // image(bgImg, 0, 0, width, height);
   // tint(255, 25);
   // stream.render();
+=======
+  background(0, 255);
+>>>>>>> c20f6a4ca2b8e275c8b76506b42ce829dcd5d0c1
   streams.forEach(function(stream) {
     stream.render();
     rotate(PI / (width / map(mouseX, 0, width, -2, 2, true)));
@@ -40,54 +41,48 @@ function Symbol(x, y, speed, first, last) {
   this.x = x;
   this.y = y;
   this.speed = speed;
-  this.switchInterval = round(random(10, 20));
+  this.switchInterval = speed;
   this.value;
   this.first = first;
   this.last = last;
+  var cats = data.cats;
 
   this.setToRandomSymbol = function() {
     if (frameCount % this.switchInterval == 0) {
-      this.value = String.fromCharCode(
-        0x4E00 + round(random(0, 1000))
-      );
-    } else {
-      return false;
+      for (var i = 0; i < cats.length; i++) {
+        this.value = cats[i];
+      }
     }
-
   }
 
-  // this.render = function(){
-  //   fill(0, 255, 70);
-  //   text(this.value, this.x, this.y);
-  //   this.rain();
-  //   this.setToRandomSymbol();
-  // }
-
   this.rain = function() {
-    // if (this.y >= height) {
-    //   this.y = 0;
-    // } else {
-    //   this.y += this.speed;
-    // }
     this.y = (this.y >= height) ? 0 : this.y += this.speed;
   }
 }
 
 function Stream() {
   this.symbols = [];
+<<<<<<< HEAD
   this.totalSymbols = round(random(10, 50));
   this.speed = round(random(1, 5));
+=======
+  this.totalSymbols = round(random(1, 5));
+  this.speed = round(random(1, 3));
+>>>>>>> c20f6a4ca2b8e275c8b76506b42ce829dcd5d0c1
   this.generateSymbols = function(x, y) {
-    // var y = 0;
-    // var x = width / 2;
-    var first = round(random(0, 4)) == 1;
-    var last = round(random(0, 2)) == 1;
+    var first = round(random(0, 10)) == 1;
+    var last = round(random(0, 20)) == 1;
     for (var i = 0; i <= this.totalSymbols; i++) {
       symbol = new Symbol(x, y, this.speed, first, last);
       symbol.setToRandomSymbol();
       this.symbols.push(symbol);
+<<<<<<< HEAD
       y -= symbolSize * 2;
       x += symbolSize * 2;
+=======
+      y -= symbolSize;
+      x += symbolSize * 100;
+>>>>>>> c20f6a4ca2b8e275c8b76506b42ce829dcd5d0c1
       first = false;
       last = false;
     }
@@ -100,7 +95,7 @@ function Stream() {
       } else if (symbol.last) {
         fill(255, 0, 0);
       } else {
-        fill(0, 0, 255);
+        fill(0, 155, 255);
       }
       text(symbol.value, symbol.x, symbol.y);
       symbol.rain();
