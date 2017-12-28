@@ -58,7 +58,7 @@ class Snowflake {
         if (this.r >= 5) {
           this.pos.y = height - this.r;
         } else if (snow.length < 500) {
-          snow.splice(i, 10);
+          snow.splice(i, 30);
         } else {
           snow.splice(i, 200);
         }
