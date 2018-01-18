@@ -45,8 +45,7 @@ void ditheringImage() {
       int oldR = round(factor*r/255)*(255/factor);
       int oldG = round(factor*g/255)*(255/factor);
       int oldB = round(factor*b/255)*(255/factor);
-      kitten.pixels[index(x, y)] = color(oldR, oldG, oldB);
-
+      kitten.pixels[index(x, y)] = color(oldR, oldG, 105);
       float errR = r - oldR;
       float errG = g - oldG;
       float errB = b - oldB;
