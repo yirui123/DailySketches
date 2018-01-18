@@ -29,8 +29,10 @@ class Particle {
         translate(width/a, height/a);
         rotate(PI/a);
         stroke(255);
+        fill(255);
         strokeWeight(5);
         a += 1;
+        applyForce();
       }
     }
   }
@@ -42,7 +44,7 @@ class Particle {
   void display() {
     color c = kitten.pixels[index(int(pos.x), int(pos.y))];
     noStroke();
-    fill(c, lifespan/2);
+    fill(c, lifespan/4);
     smooth();
     rect(pos.x, pos.y, 2, random(1,5));
   }  
@@ -86,6 +88,6 @@ class Particle {
   void applyForce() {
     pos.add(vel);
     vel.add(acc);
-    //acc.mult(0);
+    acc.mult(0);
   }
 }

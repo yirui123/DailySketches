@@ -32,7 +32,7 @@ int index(int x, int y) {
 }
 
 void ditheringImage() {
-  kitten.filter(GRAY);
+  //kitten.filter(GRAY);
   kitten.loadPixels();
   //image(kitten, 0, 0);
   for (int y = 0; y < kitten.height-1; y++) {
