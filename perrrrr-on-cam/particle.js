@@ -1,15 +1,13 @@
 function Particle() {
   this.pos = createVector(random(width), random(height));
+  this.r = random(10, 30);
+  this.prevPos = this.pos.copy();
 
   this.update = function() {
-    // this.vel.add(this.acc);
-    // this.vel.limit(this.maxspeed);
-    // this.pos.add(this.vel);
-    // this.acc.mult(0);
-    this.pos.x += floor(random(-10, 10));
-    this.pos.y += floor(random(-10, 10));
+    this.pos.x += noise(0.1, 1) * 5;
+    this.pos.y += 5;
     this.pos.x = constrain(this.pos.x, 0, width);
-    this.pos.y = constrain(this.pos.y, 0, height);
+    this.pos.y = constrain(this.pos.y, 0, height)
   }
 
   this.show = function() {
@@ -18,12 +16,11 @@ function Particle() {
     var col = video.get(px, py);
     console.log(col);
     noStroke();
-    // stroke(col[0], col[1], col[2], random(55));
+    // stroke(col[0], col[1], col[2], 255);
     // stroke(155, 0, 0);
-    // ellipse(this.x, this.y, this.r, this.r);
-    fill(col[0], col[1], col[2], 55);
-    ellipse(this.pos.x, this.pos.y, 20, 20);
-    // line(this.pos.x, this.pos.y, this.prevPos.x, this.prevPos.y);
+    fill(col[0], col[1], col[2], 105);
+    ellipse(this.pos.x, this.pos.y, this.r);
+    // point(this.pos.x, this.pos.y);
     console.log(this.pos.x, this.pos.y);
   }
 }
