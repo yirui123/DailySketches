@@ -8,7 +8,7 @@ void setup() {
   kitten = loadImage("kitten.jpg");
 
   ditheringImage();
-  particles = new Particle [1000];
+  particles = new Particle [2000];
   for (int i = 0; i < particles.length; i++) {
     particles[i] = new Particle();
   }
@@ -16,7 +16,7 @@ void setup() {
 }
 
 void draw() {
-  //background(0);
+  //background(255);
   for (int i = 0; i < particles.length; i++) {
     particles[i].run();
     if (particles[i].isDead()) {
@@ -24,7 +24,11 @@ void draw() {
     }
   }
   //image(kitten, 0, 0);
-  //saveFrame("image-########.png");
+ 
+  if (frameCount % 20 ==1){
+    saveFrame("image-########.png");
+  }
+  
 }
 
 int index(int x, int y) {
@@ -45,7 +49,7 @@ void ditheringImage() {
       int oldR = round(factor*r/255)*(255/factor);
       int oldG = round(factor*g/255)*(255/factor);
       int oldB = round(factor*b/255)*(255/factor);
-      kitten.pixels[index(x, y)] = color(oldR, oldG, 105);
+      kitten.pixels[index(x, y)] = color(oldR, oldG, oldB);
       float errR = r - oldR;
       float errG = g - oldG;
       float errB = b - oldB;

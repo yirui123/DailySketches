@@ -31,7 +31,10 @@ class Particle {
         stroke(255);
         fill(255, 255,255,255);
         //strokeWeight(100);
-        a += 1;
+        a += 0.01;
+        if (a > 16){
+          a = 0;
+        }
         applyForce();
       }
       if (key == 'c' || key == 'C') {
@@ -39,9 +42,13 @@ class Particle {
         translate(width/a, height/a);
         rotate(TWO_PI/a);
         stroke(255);
-        fill(255, 255,255,255);
+        fill(255,255,255,255);
         //strokeWeight(100);
-        a -= 1;
+        a -= 0.01;
+        a += 0.01;
+        if (a < 0){
+          a = 10;
+        }
         applyForce();
       }
     }
@@ -54,7 +61,7 @@ class Particle {
   void display() {
     color c = kitten.pixels[index(int(pos.x), int(pos.y))];
     noStroke();
-    fill(c, lifespan/10);
+    fill(c, lifespan/2);
     smooth();
     rect(pos.x, pos.y, 1, random(1,5));
   }  
