@@ -19,36 +19,35 @@ class Particle {
     move();
 
     if (keyPressed) {
+      if (key == 's' || key == 'S') {
+        speedUp();
+      }
+    }
+    
+     if (keyPressed) {
       if (key == 'm' || key == 'M') {
         messWith();
       }
     }
-    if (keyPressed) {
+    
+     if (keyPressed) {
       if (key == 'b' || key == 'B') {
         float a = 5;
         translate(width/a, height/a);
         rotate(PI/a);
         stroke(255);
-        fill(255, 255,255,255);
-        //strokeWeight(100);
-        a += 0.01;
-        if (a > 16){
-          a = 0;
-        }
+        strokeWeight(1);
+        a += 0.1;
         applyForce();
       }
-      if (key == 'c' || key == 'C') {
+      if (key == 'd' || key == 'D') {
         float a = 10;
         translate(width/a, height/a);
-        rotate(TWO_PI/a);
+        rotate(PI/a);
         stroke(255);
-        fill(255,255,255,255);
-        //strokeWeight(100);
-        a -= 0.01;
-        a += 0.01;
-        if (a < 0){
-          a = 10;
-        }
+        fill(255);
+        strokeWeight(1);
+        a -= 0.1;
         applyForce();
       }
     }
@@ -97,6 +96,11 @@ class Particle {
   }
 
   void messWith() {
+    pos.x = mouseX; 
+    pos.y = mouseY;
+  }
+  
+  void speedUp() {
     pos.x = random(width); 
     pos.y = random(height);
     applyForce();

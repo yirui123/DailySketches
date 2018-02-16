@@ -3,12 +3,13 @@ Particle[] particles;
 
 
 void setup() {
-  size(480, 480);
-  background(255);
+  size(399,399);
+  background(0,0,0);
+  frameRate(24);
   kitten = loadImage("kitten.jpg");
 
   ditheringImage();
-  particles = new Particle [2000];
+  particles = new Particle [500];
   for (int i = 0; i < particles.length; i++) {
     particles[i] = new Particle();
   }
@@ -25,9 +26,9 @@ void draw() {
   }
   //image(kitten, 0, 0);
  
-  if (frameCount % 20 ==1){
-    saveFrame("image-########.png");
-  }
+  //if (frameCount % 20 ==1){
+  //  saveFrame("image-########.png");
+  //}
   
 }
 
