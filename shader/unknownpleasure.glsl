@@ -20,7 +20,7 @@ void main() {
         Wposition = vec2(st.x, st.y);
     }
 
-    float modValue = fract(sin(u_time/10.0));
+    float modValue = fract(sin(u_time/1.0));
     float xLine = mod(Wposition.y, modValue);
 
     // bottom-left
