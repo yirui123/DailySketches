@@ -20,20 +20,20 @@ void main() {
         Wposition = vec2(st.x, st.y);
     }
 
-    float modValue = fract(sin(u_time/1.0));
+    float modValue = fract(sin(u_time/10.0));
     float xLine = mod(Wposition.y, modValue);
 
     // bottom-left
-    vec2 bl = step(vec2(0.25),st);
+    vec2 bl = step(vec2(0.05),st);
     float pct = bl.x * bl.y;
     // top-right
-    vec2 tr = step(vec2(0.25),1.0-st);
+    vec2 tr = step(vec2(0.05),1.0-st);
     pct *= tr.x * tr.y;
 
     float x = xLine * pct;
     vec3 color = vec3(x);
 
-    color = (10.0-x)*color;
+    color = (5.0+tan(u_time/5.0)-x)*color;
 
-	gl_FragColor = vec4(color,0.5);
+	gl_FragColor = vec4(color,1.0);
 }
