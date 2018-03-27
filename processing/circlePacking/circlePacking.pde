@@ -1,6 +1,6 @@
-import com.hamoid.*;
+//import com.hamoid.*;
 
-VideoExport videoExport;
+//VideoExport videoExport;
 PImage img; 
 Circle c;
 ArrayList<Circle> circles;
@@ -9,8 +9,8 @@ ArrayList<PVector> spots;
 void setup() {
   background(0);
   size(800, 800);
-  videoExport = new VideoExport(this);
-  videoExport.startMovie();
+  //videoExport = new VideoExport(this);
+  //videoExport.startMovie();
   frameRate(60);
   spots = new ArrayList<PVector>();
   img = loadImage("per.png");
@@ -32,8 +32,8 @@ void setup() {
 
 void draw() {
   background(0);
-  rect(frameCount * frameCount % width, 0, 40, height);
-  int total = 5;
+  rect(frameCount * frameCount % width, 0, 50, height);
+  int total = 2;
   int count = 0;
   int attempts = 0;
   
@@ -72,9 +72,9 @@ void draw() {
   }
   //saveFrame("line-######.png");
 }
-void keyPressed() {
-  if (key == 'q') {
-    videoExport.endMovie();
-    exit();
-  }
-}
+//void keyPressed() {
+//  if (key == 'q') {
+//    videoExport.endMovie();
+//    exit();
+//  }
+//}

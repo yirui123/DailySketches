@@ -34,12 +34,12 @@ class Circle {
   }
   
   void display() {
-    fill(255,15);
-    stroke(255,random(155,255));
-    strokeWeight(0.3);
+    noFill();
+    stroke(255,105);
+    strokeWeight(random(0.3,3));
     float xoff = 0.0;
     for(int i = 0; i < 10; i++){
-      ellipse(x+noise(xoff)*10, y-random(noise(xoff)*10), r*2, r*2);
+      ellipse(x+noise(xoff)*10, y-random(noise(xoff)*15), r*2, r*2);
       xoff++;
     }
   }
@@ -52,7 +52,7 @@ class Circle {
   
   void grow() {
     if (growing){
-      r=r+0.3;
+      r=r+0.1;
     }
   }
 }
