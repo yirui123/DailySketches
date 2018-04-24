@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style media="screen">
+    .dnt-button {
+
+      text-align: center;
+      margin: 20% auto;
+      color: #000;
+      font-family: Arial;
+      font-weight: bold;
+      position: relative;
+      cursor: pointer;
+      opacity: 0.8;
+    }
+
+    .dnt-button:hover {
+      opacity: 1;
+    }
+
+    .heart {
+      display: block;
+      position: absolute;
+      opacity: 0.5;
+      right: 8%;
+      bottom: 30%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dnt-button">
+    <svg>
+      <rect width="160" height="110" stroke="green" stroke-width="3" fill="yellow"/>
+      </svg>
+  </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+  // $(document).ready(function() {
+  //   function getRandomInt(min, max) {
+  //     return Math.floor(Math.random() * (max - min + 1)) + min;
+  //   }
+  //
+  //   function addHearts() {
+  //     let heart = $('.heart');
+  //     for (let i = 0; i < 10; i++) {
+  //       setTimeout(() => {
+  //         heart.clone().insertAfter(heart);
+  //         var rightDist = 10 - i;
+  //         var bottomDist = 30 + 10 * i;
+  //         heart.css({
+  //           'right': rightDist + '%',
+  //           'bottom': bottomDist + '%',
+  //           'font-size': 1 + getRandomInt(-0.5, 0.5) + 'rem'
+  //         })
+  //       }, i * 50)
+  //     }
+  //   }
+  //
+  //   $('.dnt-button').mouseover(function() {
+  //     addHearts();
+  //   });
+  //
+  //   $('.dnt-button').mouseover(function() {
+  //     addHearts();
+  //   }).mouseout(function() {
+  //     $('.heart').fadeOut("slow");
+  //   });
+  //
+  //
+  //
+  // });
+</script>
+
+</html>

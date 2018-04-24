@@ -1,0 +1,324 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../.rvm/gems/ruby-2.4.2@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../.rvm/gems/ruby-2.4.2@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../.rvm/gems/ruby-2.4.2@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../.rvm/gems/ruby-2.4.2@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../.rvm/gems/ruby-2.4.2@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../.rvm/gems/ruby-2.4.2@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../.rvm/gems/ruby-2.4.2@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../.rvm/gems/ruby-2.4.2@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../.rvm/gems/ruby-2.4.2@global/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 7, ../sass/screen.scss */
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* line 14, ../sass/screen.scss */
+.blobCont {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* line 20, ../sass/screen.scss */
+.blob {
+  stroke: #FFF;
+  stroke-width: 4;
+}
+
+/* line 28, ../sass/screen.scss */
+.blob:nth-child(1) {
+  animation: move1 15s infinite linear;
+}
+
+@keyframes move1 {
+  from {
+    transform: rotate(90deg) translate(20vw, 0.1px) rotate(-90deg);
+  }
+  to {
+    transform: rotate(450deg) translate(20vw, 0.1px) rotate(-450deg);
+  }
+}
+/* line 28, ../sass/screen.scss */
+.blob:nth-child(2) {
+  animation: move2 15s infinite linear;
+}
+
+@keyframes move2 {
+  from {
+    transform: rotate(180deg) translate(20vw, 0.1px) rotate(-180deg);
+  }
+  to {
+    transform: rotate(540deg) translate(20vw, 0.1px) rotate(-540deg);
+  }
+}
+/* line 28, ../sass/screen.scss */
+.blob:nth-child(3) {
+  animation: move3 15s infinite linear;
+}
+
+@keyframes move3 {
+  from {
+    transform: rotate(270deg) translate(20vw, 0.1px) rotate(-270deg);
+  }
+  to {
+    transform: rotate(630deg) translate(20vw, 0.1px) rotate(-630deg);
+  }
+}
+/* line 28, ../sass/screen.scss */
+.blob:nth-child(4) {
+  animation: move4 15s infinite linear;
+}
+
+@keyframes move4 {
+  from {
+    transform: rotate(360deg) translate(20vw, 0.1px) rotate(-360deg);
+  }
+  to {
+    transform: rotate(720deg) translate(20vw, 0.1px) rotate(-720deg);
+  }
+}
+/* line 28, ../sass/screen.scss */
+.blob:nth-child(5) {
+  animation: move5 15s infinite linear;
+}
+
+@keyframes move5 {
+  from {
+    transform: rotate(450deg) translate(20vw, 0.1px) rotate(-450deg);
+  }
+  to {
+    transform: rotate(810deg) translate(20vw, 0.1px) rotate(-810deg);
+  }
+}
+/* line 28, ../sass/screen.scss */
+.blob:nth-child(6) {
+  animation: move6 15s infinite linear;
+}
+
+@keyframes move6 {
+  from {
+    transform: rotate(540deg) translate(20vw, 0.1px) rotate(-540deg);
+  }
+  to {
+    transform: rotate(900deg) translate(20vw, 0.1px) rotate(-900deg);
+  }
+}
+/* line 28, ../sass/screen.scss */
+.blob:nth-child(7) {
+  animation: move7 15s infinite linear;
+}
+
+@keyframes move7 {
+  from {
+    transform: rotate(630deg) translate(20vw, 0.1px) rotate(-630deg);
+  }
+  to {
+    transform: rotate(990deg) translate(20vw, 0.1px) rotate(-990deg);
+  }
+}
+/* line 28, ../sass/screen.scss */
+.blob:nth-child(8) {
+  animation: move8 15s infinite linear;
+}
+
+@keyframes move8 {
+  from {
+    transform: rotate(720deg) translate(20vw, 0.1px) rotate(-720deg);
+  }
+  to {
+    transform: rotate(1080deg) translate(20vw, 0.1px) rotate(-1080deg);
+  }
+}
+/* line 28, ../sass/screen.scss */
+.blob:nth-child(9) {
+  animation: move9 15s infinite linear;
+}
+
+@keyframes move9 {
+  from {
+    transform: rotate(810deg) translate(20vw, 0.1px) rotate(-810deg);
+  }
+  to {
+    transform: rotate(1170deg) translate(20vw, 0.1px) rotate(-1170deg);
+  }
+}
+/* line 28, ../sass/screen.scss */
+.blob:nth-child(10) {
+  animation: move10 15s infinite linear;
+}
+
+@keyframes move10 {
+  from {
+    transform: rotate(900deg) translate(20vw, 0.1px) rotate(-900deg);
+  }
+  to {
+    transform: rotate(1260deg) translate(20vw, 0.1px) rotate(-1260deg);
+  }
+}
+/* line 28, ../sass/screen.scss */
+.blob:nth-child(11) {
+  animation: move11 15s infinite linear;
+}
+
+@keyframes move11 {
+  from {
+    transform: rotate(990deg) translate(20vw, 0.1px) rotate(-990deg);
+  }
+  to {
+    transform: rotate(1350deg) translate(20vw, 0.1px) rotate(-1350deg);
+  }
+}
+/* line 28, ../sass/screen.scss */
+.blob:nth-child(12) {
+  animation: move12 15s infinite linear;
+}
+
+@keyframes move12 {
+  from {
+    transform: rotate(1080deg) translate(20vw, 0.1px) rotate(-1080deg);
+  }
+  to {
+    transform: rotate(1440deg) translate(20vw, 0.1px) rotate(-1440deg);
+  }
+}
+/* line 28, ../sass/screen.scss */
+.blob:nth-child(13) {
+  animation: move13 15s infinite linear;
+}
+
+@keyframes move13 {
+  from {
+    transform: rotate(1170deg) translate(20vw, 0.1px) rotate(-1170deg);
+  }
+  to {
+    transform: rotate(1530deg) translate(20vw, 0.1px) rotate(-1530deg);
+  }
+}
+/* line 28, ../sass/screen.scss */
+.blob:nth-child(14) {
+  animation: move14 15s infinite linear;
+}
+
+@keyframes move14 {
+  from {
+    transform: rotate(1260deg) translate(20vw, 0.1px) rotate(-1260deg);
+  }
+  to {
+    transform: rotate(1620deg) translate(20vw, 0.1px) rotate(-1620deg);
+  }
+}
+/* line 28, ../sass/screen.scss */
+.blob:nth-child(15) {
+  animation: move15 15s infinite linear;
+}
+
+@keyframes move15 {
+  from {
+    transform: rotate(1350deg) translate(20vw, 0.1px) rotate(-1350deg);
+  }
+  to {
+    transform: rotate(1710deg) translate(20vw, 0.1px) rotate(-1710deg);
+  }
+}
+/* line 28, ../sass/screen.scss */
+.blob:nth-child(16) {
+  animation: move16 15s infinite linear;
+}
+
+@keyframes move16 {
+  from {
+    transform: rotate(1440deg) translate(20vw, 0.1px) rotate(-1440deg);
+  }
+  to {
+    transform: rotate(1800deg) translate(20vw, 0.1px) rotate(-1800deg);
+  }
+}
+/* line 28, ../sass/screen.scss */
+.blob:nth-child(17) {
+  animation: move17 15s infinite linear;
+}
+
+@keyframes move17 {
+  from {
+    transform: rotate(1530deg) translate(20vw, 0.1px) rotate(-1530deg);
+  }
+  to {
+    transform: rotate(1890deg) translate(20vw, 0.1px) rotate(-1890deg);
+  }
+}
+/* line 28, ../sass/screen.scss */
+.blob:nth-child(18) {
+  animation: move18 15s infinite linear;
+}
+
+@keyframes move18 {
+  from {
+    transform: rotate(1620deg) translate(20vw, 0.1px) rotate(-1620deg);
+  }
+  to {
+    transform: rotate(1980deg) translate(20vw, 0.1px) rotate(-1980deg);
+  }
+}
