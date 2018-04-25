@@ -4,11 +4,11 @@ Particle[] particles;
 
 
 void setup() {
-  size(400, 500);
+  size(600, 800);
   cam = new Capture(this, width, height);
   cam.start();     
   ditheringImage();
-  particles = new Particle [3000];
+  particles = new Particle [1000];
   for (int i = 0; i < particles.length; i++) {
     particles[i] = new Particle();
   }

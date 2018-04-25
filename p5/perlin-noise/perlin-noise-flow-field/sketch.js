@@ -1,5 +1,5 @@
 var inc = 0.1;
-var scl = 10;
+var scl = 50;
 var cols, rows;
 var fr; //framerate
 var zoff = 0;
@@ -8,13 +8,13 @@ var particles = [];
 var flowfield = [];
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  background(255);
+  createCanvas(600, 600);
+  background(0);
   cols = floor(width / scl);
   rows = floor(height / scl);
   fr = createP('');
   flowfield = new Array(cols * rows);
-  for (var i = 0; i < 2000; i++) {
+  for (var i = 0; i < 200; i++) {
     particles[i] = new Particle();
   }
 }
@@ -28,7 +28,7 @@ function draw() {
       var index = x + y * cols;
       var angle = PI + noise(xoff, yoff, zoff) * TWO_PI * 4;
       var v = p5.Vector.fromAngle(angle);
-      v.setMag(0.5);
+      v.setMag(0.7);
       flowfield[index] = v;
       stroke(0, 2);
       // push();
