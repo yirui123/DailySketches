@@ -29,8 +29,8 @@ function Particle() {
     if (frameCount > 255) {
       b = floor(noise(1) * 255);
     }
-    stroke(map(this.pos.x, 0, width, 0, 255), map(this.pos.y, 0, width, 0, 155), b, 155);
-    strokeWeight(1);
+    stroke(255);
+    strokeWeight(2);
     line(this.pos.x, this.pos.y, this.prevPos.x, this.prevPos.y);
     this.updatePrev();
   }
