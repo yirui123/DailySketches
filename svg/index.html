@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <!-- <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> -->
+  <!--[if IE]>
+      <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <![endif]-->
+</head>
+
+<body style="background:#000;margin:0">
+  <div>
+    <svg style="margin:20% auto;display:block;" width="302px" height="315px" viewBox="0 0 302 315"  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <defs></defs>
+          <filter id="blur">
+              <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+          </filter>
+          <filter id="displacementFilter">
+            <feTurbulence id="turbwave" type="turbulence" baseFrequency="0.05" numOctaves="2" result="turbulence"/>
+            <feDisplacementMap id="turbDis" in2="turbulence" in="SourceGraphic" scale="15" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+          <clipPath id="clip-path">
+              <rect width="302px" height="315px" x="0" y="0" />
+          </clipPath>
+          <g filter="url(#displacementFilter)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g clip-path="url(#clip-path)" id="Cat-Silhouette-2" fill="none" stroke="#FFF" fill-rule="nonzero">
+                  <g  id="Ebene_2" filter="url(#blur)">
+                    <path d="M183.723402,241.736349 C183.723402,241.736349 222.780913,120.904085 124.927174,95.3457062 C124.927174,95.3457062 110.948048,86.1662783 110.108113,82.926494 C109.268177,79.6867096 99.7287605,68.9473917 93.309194,66.1275751 C93.309194,66.1275751 87.7295394,48.9086884 84.1297895,46.5088395 C84.1297895,46.5088395 91.7493039,4.93149828 82.5098739,0.49178951 C73.3304694,-3.82793851 60.1313005,21.7304172 60.1313005,21.7304172 C60.1313005,21.7304172 37.3327593,24.1302661 34.5129427,22.9303416 C31.6931261,21.7304172 8.89458493,-1.06812397 4.51485485,2.53164938 C0.135124759,6.13142273 0.495113786,13.7509371 6.49473603,45.7288828 C6.49473603,45.7288828 -15.1038807,70.1473161 20.4738383,105.305067 C20.4738383,105.305067 22.4537195,109.324808 24.4935794,116.524355 C26.4734606,123.723878 21.3137738,128.343593 28.8733095,144.842549 C36.4928239,161.341481 51.6718506,186.119903 49.2720017,190.919578 C49.2720017,190.919578 50.8919173,246.116055 45.2522607,248.515904 C39.6126275,250.91573 29.0533157,261.295082 41.6524873,267.294704 C41.6524873,267.294704 41.7124894,274.494228 46.0322174,276.474109 C55.4516068,280.853839 65.2309852,280.073882 69.6107153,276.474109 C73.9904454,272.874359 76.8102386,272.094402 80.8300031,262.854996 L90.4293753,264.474888 C89.7694227,265.974799 88.2095326,270.174523 89.9494055,274.314245 C89.9494055,274.314245 91.3893148,277.674033 95.6490408,280.073882 C102.428596,283.913641 124.087239,281.57377 151.625452,274.07426 C151.625452,274.07426 164.40463,282.893722 185.223313,271.674388 C206.041997,260.4551 256.438753,260.095158 269.637922,274.07426 C282.837068,288.053362 230.520432,296.15287 230.520432,296.15287 C230.520432,296.15287 212.521589,310.131996 236.10004,312.531821 C259.678538,314.931647 318.1148,290.933204 294.4763,266.934739 C270.8378,242.936273 223.680851,233.336901 183.723402,241.736349 Z" id="Shape"></path>
+                  </g>
+              </g>
+          </g>
+      </svg>
+  </div>
+
+</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.9.0/TweenMax.min.js"></script>
+
+<script type="text/javascript">
+  // create web audio api context
+  var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+  // create Oscillator node
+  var oscillator = audioCtx.createOscillator();
+
+  var sqzer = 100;
+  oscillator.type = 'sine';
+  oscillator.frequency.setValueAtTime(sqzer, audioCtx.currentTime); // value in hertz
+  oscillator.connect(audioCtx.destination);
+
+  function update(){
+    setTimeout(oscillator.start(), 5000);
+    TweenMax.to("#turbDis", 4, {
+      attr:{
+        "scale":0.01*sqzer
+      },
+      repeat:-1,
+      yoyo:true
+    });
+    TweenMax.to("#turbwave", 8, {
+      attr:{
+        "baseFrequency":0.05*sqzer
+      },
+      repeat:-1,
+      yoyo:true
+    });
+  }
+
+  update();
+
+
+</script>
+
+</html>

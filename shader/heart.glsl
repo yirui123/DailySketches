@@ -19,13 +19,13 @@ vec2 tile (vec2 _st, float _zoom) {
 vec2 rotateTilePattern(vec2 _st){
 
     //  Scale the coordinate system by 2x2
-    _st *= 4.0;
+    _st *= 1.6;
 
     //  Give each cell an index number
     //  according to its position
     float index = 0.0;
-    index += step(1., mod(_st.x,2.0));
-    index += step(1., mod(_st.y,2.0))*2.0;
+    index += step(1., mod(_st.x,3.0));
+    index += step(1., mod(_st.y,3.0))*2.0;
 
     _st = fract(_st);
 
@@ -47,16 +47,16 @@ void main() {
    vec2 st = gl_FragCoord.xy/u_resolution;
 
    st = tile( st - fract(sin(u_time)/50.0)*0.2, 1.0 - fract(sin(u_time)/50.0)*3.8);
-   st = rotateTilePattern(st + fract(sin(u_time)/10.0)*0.2);
+   st = rotateTilePattern(st + fract(sin(u_time)/10.0)*16.0);
    vec2 p = 2.0*st - vec2(1.0);
    p.y -= 0.25;
 
    // background color
-   float tt = mod(iGlobalTime,8.0)/2.0;
+   float tt = mod(iGlobalTime,13.0)/4.0;
    vec3 bcol = vec3(0.0);
 
    // animate
-   p *= vec2(0.5,1.5) + tt*vec2(1.0,-1.0);
+   p *= vec2(0.1,1.1) + tt*vec2(1.0,-1.0);
 
 
    // shape
@@ -70,12 +70,12 @@ void main() {
    s = 0.75 + 0.75*p.x;
    s *= 1.0-0.25*r;
    s = 0.5 + 0.6*s;
-   s *= 0.5+0.5*pow( 1.0-clamp(r/d, 0.0, 1.0 ), 0.1 );
+   s *= 0.9+0.5*pow( 1.0-clamp(r/d, 0.0, 1.0 ), 0.001 );
    //
    //vec3 hcol = vec3(0.3*r,0.1*s,0.5*s)*r*3.0;
    vec3 hcol = vec3(1.0)*s;
 
-   vec3 col = mix( bcol, hcol, smoothstep( -0.1, 0.01, d-r) );
+   vec3 col = mix( bcol, hcol, smoothstep( -0.1, 0.05, d-r) );
 
    gl_FragColor = vec4(col,1.0);
 }
