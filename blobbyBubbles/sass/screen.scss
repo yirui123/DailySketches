@@ -3,17 +3,26 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 @import "compass/reset";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 08c8e3150d2d2bfdc12f4e1b1760deeff8f8e1c9
 body {
   margin: 0;
   height: 100%;
   width: 100%;
+<<<<<<< HEAD
   overflow: none;
+=======
+  overflow: hidden;
+>>>>>>> 08c8e3150d2d2bfdc12f4e1b1760deeff8f8e1c9
 }
 
 .blobCont {
   position: absolute;
   width: 100vw;
   height: 100vh;
+<<<<<<< HEAD
   background: #000;
   //background-image: linear-gradient(-90deg, #2C3244 0%, #386B82 18%, #778586 37%, #1F1628 58%, #494C43 82%, #2F5B6E 98%);
 
@@ -22,13 +31,24 @@ body {
 .blob {
   //stroke: #FFF;
   stroke-width: 5;
+=======
+}
+
+.blob {
+  stroke: #FFF;
+  stroke-width: 4;
+>>>>>>> 08c8e3150d2d2bfdc12f4e1b1760deeff8f8e1c9
 }
 @for $i from 1 through 18 {
   $a: #{$i*90};
   $b: #{$i*90+360};
 
   .blob:nth-child(#{$i}) {
+<<<<<<< HEAD
     animation: move#{$i} 15s infinite ease-in-out;
+=======
+    animation: move#{$i} 15s infinite linear;
+>>>>>>> 08c8e3150d2d2bfdc12f4e1b1760deeff8f8e1c9
   }
   @keyframes move#{$i} {
     from {
@@ -39,4 +59,8 @@ body {
       transform: rotate(#{$b}deg) translate(20vw ,0.1px) rotate(-#{$b}deg);
     }
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 08c8e3150d2d2bfdc12f4e1b1760deeff8f8e1c9
