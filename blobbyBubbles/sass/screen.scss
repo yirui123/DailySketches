@@ -1,0 +1,42 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "compass/reset";
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: none;
+}
+
+.blobCont {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  //background-image: linear-gradient(-90deg, #2C3244 0%, #386B82 18%, #778586 37%, #1F1628 58%, #494C43 82%, #2F5B6E 98%);
+
+}
+
+.blob {
+  //stroke: #FFF;
+  stroke-width: 5;
+}
+@for $i from 1 through 18 {
+  $a: #{$i*90};
+  $b: #{$i*90+360};
+
+  .blob:nth-child(#{$i}) {
+    animation: move#{$i} 15s infinite ease-in-out;
+  }
+  @keyframes move#{$i} {
+    from {
+      transform: rotate(#{$a}deg) translate(20vw ,0.1px) rotate(-#{$a}deg);
+    }
+
+    to {
+      transform: rotate(#{$b}deg) translate(20vw ,0.1px) rotate(-#{$b}deg);
+    }
+  }
+}
