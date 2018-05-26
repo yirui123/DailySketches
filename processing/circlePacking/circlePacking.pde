@@ -32,6 +32,8 @@ void setup() {
 
 void draw() {
   background(0);
+  strokeWeight(0.3);
+  stroke(255,0,0);
   rect(frameCount * frameCount % width, 0, 50, height);
   int total = 2;
   int count = 0;
