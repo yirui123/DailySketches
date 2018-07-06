@@ -32,8 +32,8 @@ function Particle() {
     }
     beginShape();
     fill(this.pos.x, this.pos.y, this.pos.z, 55);
-    vertex(this.pos.x, this.pos.y, this.pos.z);
-    vertex(this.prevPos.x, this.prevPos.y, this.prevPos.z);
+    vertex(this.pos.x, this.pos.y, 100);
+    vertex(this.prevPos.x, this.prevPos.y, 0);
     endShape();
 
     this.updatePrev();

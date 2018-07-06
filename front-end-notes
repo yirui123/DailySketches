@@ -1,0 +1,203 @@
+Front-end
+-HTML
+
+- CSS
+一、CSS盒子模型，绝对定位和相对定位
+
+　　1）清除浮动，什么时候需要清除浮动，清除浮动都有哪些方法
+
+　　2）如何保持浮层水平垂直居中
+
+　　3）position 和 display 的取值和各自的意思和用法
+
+　　4）样式的层级关系，选择器优先级，样式冲突，以及抽离样式模块怎么写，说出思路，有无实践经验
+
+- JS
+Ajax:
+
+1. An event occurs in a web page (the page is loaded, a button is clicked)
+2. An XMLHttpRequest object is created by JavaScript
+3. The XMLHttpRequest object sends a request to a web server
+4. The server processes the request
+5. The server sends a response back to the web page
+6. The response is read by JavaScript
+7. Proper action (like page update) is performed by JavaScript
+
+function loadDoc() {
+  //Create an XMLHttpRequest Object
+  if (window.XMLHttpRequest) {
+    // code for modern browsers
+    xmlhttp = new XMLHttpRequest();
+  } else {
+    // code for old IE browsers
+    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.send();
+}
+
+
+
+　1）JavaScript 里有哪些数据类型，解释清楚 null 和 undefined，解释清楚原始数据类型和引用数据类型。比如讲一下 1 和 Number(1) 的区别
+
+　　2）将一下 prototype 是什么东西，原型链的理解，什么时候用 prototype
+
+　　3）函数里的this什么含义，什么情况下，怎么用。
+
+　　4）apply 和 call 什么含义，什么区别？什么时候用。
+
+　　5）数组和对象有哪些原生方法，列举一下，分别是什么含义，比如链接两个数组用哪个方法，删除数组的质定项。
+JavaScript的面向对象
+
+　　1）JS 模块包装格式都用过哪些，CommonJS、AMD、CMD、KMD。定义一个js 模块代码，最精简的格式是怎样。
+
+　　2）JS 怎么实现一个类。怎么实例化这个类。
+
+　　3）是否了解自定义事件。jQuery里的fire函数是什么意思，什么时候用。
+
+　　4）说一下了解的js 设计模式，解释一下单例、工厂、观察者。
+
+　　5）ajax 跨域有哪些方法，jsonp 的原理是什么，如果页面编码和被请求的资源编码不一致如何处理？
+
+开源工具
+
+　　1）是否了解开源的工具 bower、npm、yeoman、Grunt、gulp，有无用过，有无写过，一个 npm 的包里的 package.json 具备的必要的字段都有哪些（名称、版本号，依赖）
+
+　　2）fiddle、charles 有没有用过，什么时候用
+
+　　3）会不会用 ps 扣图，png、jpg、gif 这些图片格式解释一下，分别什么时候用。
+
+　　4）说一下你常用的命令行工具
+
+　　5）会不会用git，说上来几个命令，说一下git和svn的区别，有没有用git解决过冲突
+计算机基础
+
+　　1）说一下网络五层模型（HTTP协议从应用层到底层都基于哪些协议），HTTP 协议头字段说上来几个，缓存字段是怎么定义的，http和https的区别，在具体使用的时候有什么不一样。是否尽可能详细的掌握HTTP协议。
+
+　　2）cookies 是干嘛的，服务器和浏览器之间的 cookies 是怎么传的，httponly 的 cookies 和可读写的 cookie 有什么区别，有无长度限制
+
+　　3）从敲入 URL 到渲染完成的整个过程，包括 DOM 构建的过程，说的约详细越好。
+
+　　4）是否了解web注入攻击，说下原理，最常见的两种攻击（XSS 和 CSRF）了解到什么程度。
+
+　　5）是否了解公钥加密和私钥加密。如何确保表单提交里的密码字段不被泄露。验证码是干嘛的，是为了解决什么安全问题。
+
+　　6）编码常识：文件编码、URL 编码、Unicode编码 什么含义。一个gbk编码的页面如何正确引用一个utf8的的资源
+
+
+-SEO
+http://yslow.org/
+SEO有一条不变的准则就是它永远都在变
+减少 HTTP请求数
+合理设置 HTTP缓存  cache basket.js
+图片压缩: Or just use svg
+http://optipng.sourceforge.net/
+http://jpegclub.org/jpegtran/
+http://optipng.sourceforge.net/pngtech/optipng.html
+CSS Sprites & http://www.csszengarden.com/
+Lazy Load Images  jquery.lazyload.js
+外部脚本置底
+异步执行 inline脚本
+service workers
+JavaScript 压缩和模块打包 Webpack
+按需加载资源 components
+在使用 DOM 操作库时用上 array-ids
+Chrome Dev Tools 中的时间线和网络视图 & CPU 性能分析
+JavaScript 阻塞解析器和渲染器: <script src="async.js" async></script>
+
+
+　　1. 对网站的标题、关键字、描述精心设置，反映网站的定位，让搜索引擎明白网站是做什么的；
+
+　　2. 网站内容优化：内容与关键字的对应，增加关键字的密度；
+
+　　3. 在网站上合理设置Robot.txt文件；
+
+　　4. 生成针对搜索引擎友好的网站地图；Sitemap
+
+　　5. 增加外部链接，到各个网站上宣传；Outside links
+
+三、前端SEO
+　　　(1)网站结构布局优化：尽量简单、开门见山，提倡扁平化结构。
+　　一般而言，建立的网站结构层次越少，越容易被“蜘蛛”抓取，也就容易被收录。一般中小型网站目录结构超过三级，“蜘蛛”便不愿意往下爬，“万一天黑迷路了怎么办”。并且根据相关调查：访客如果经过跳转3次还没找到需要的信息，很可能离开。因此，三层目录结构也是体验的需要。为此我们需要做到：
+　　1. 控制首页链接数量
+
+　　网站首页是权重最高的地方，如果首页链接太少，没有“桥”，“蜘蛛”不能继续往下爬到内页，直接影响网站收录数量。但是首页链接也不能太多，一旦太多，没有实质性的链接，很容易影响用户体验，也会降低网站首页的权重，收录效果也不好。
+
+　　因此对于中小型企业网站，建议首页链接在100个以内，链接的性质可以包含页面导航、底部导航、锚文字链接等等，注意链接要建立在用户的良好体验和引导用户获取信息的基础之上。
+
+　　2.扁平化的目录层次，尽量让“蜘蛛”只要跳转3次，就能到达网站内的任何一个内页。扁平化的目录结构，比如：“植物”--> "水果" --> "苹果"、“桔子”、“香蕉”，通过3级就能找到香蕉了。
+
+　　3.导航优化
+
+　　导航应该尽量采用文字方式，也可以搭配图片导航，但是图片代码一定要进行优化，<img>标签必须添加“alt”和“title”属性，告诉搜索引擎导航的定位，做到即使图片未能正常显示时，用户也能看到提示文字。
+
+　　其次，在每一个网页上应该加上面包屑导航，好处：从用户体验方面来说，可以让用户了解当前所处的位置以及当前页面在整个网站中的位置，帮助用户很快了解网站组织形式，从而形成更好的位置感，同时提供了返回各个页面的接口，方便用户操作；对“蜘蛛”而言，能够清楚的了解网站结构，同时还增加了大量的内部链接，方便抓取，降低跳出率。breadcrumbs
+
+　　4. 网站的结构布局--不可忽略的细节
+
+　　页面头部：logo及主导航，以及用户的信息。
+
+　　页面主体：左边正文，包括面包屑导航及正文；右边放热门文章及相关文章，好处：留住访客，让访客多停留，对“蜘蛛”而言，这些文章属于相关链接，增强了页面相关性，也能增强页面的权重。
+
+　　页面底部：版权信息和友情链接。
+
+　　特别注意：分页导航写法，推荐写法：“首页 1 2 3 4 5 6 7 8 9 下拉框”，这样“蜘蛛”能够根据相应页码直接跳转，下拉框直接选择页面跳转。而下面的写法是不推荐的，“首页 下一页 尾页”，特别是当分页数量特别多时，“蜘蛛”需要经过很多次往下爬，才能抓取，会很累、会容易放弃。
+
+　　5.控制页面的大小，减少http请求，提高网站的加载速度。
+
+　　一个页面最好不要超过100k，太大，页面加载速度慢。当速度很慢时，用户体验不好，留不住访客，并且一旦超时，“蜘蛛”也会离开。
+
+　　(2)网页代码优化
+　　1.<title>标题：只强调重点即可，尽量把重要的关键词放在前面，关键词不要重复出现，尽量做到每个页面的<title>标题中不要设置相同的内容。
+
+　　2.<meta keywords>标签：关键词，列举出几个页面的重要关键字即可，切记过分堆砌。
+
+　　3.<meta description>标签：网页描述，需要高度概括网页内容，切记不能太长，过分堆砌关键词，每个页面也要有所不同。
+
+
+
+　　4.<body>中的标签：尽量让代码语义化，在适当的位置使用适当的标签，用正确的标签做正确的事。让阅读源码者和“蜘蛛”都一目了然。比如：h1-h6 是用于标题类的，<nav>标签是用来设置页面主导航的等。
+
+
+
+　　5.<a>标签：页内链接，要加 “title” 属性加以说明，让访客和 “蜘蛛” 知道。而外部链接，链接到其他网站的，则需要加上 el="nofollow" 属性, 告诉 “蜘蛛” 不要爬，因为一旦“蜘蛛”爬了外部链接之后，就不会再回来了。
+
+
+
+　　6.正文标题要用<h1>标签：“蜘蛛” 认为它最重要，若不喜欢<h1>的默认样式可以通过CSS设置。尽量做到正文标题用<h1>标签，副标题用<h2>标签, 而其它地方不应该随便乱用 h 标题标签。
+
+
+
+　　7.<br>标签：只用于文本内容的换行，比如:
+
+<p>
+　　 第一行文字内容<br/>
+    第二行文字内容<br/>
+    第三行文字内容
+</p>
+　　8.表格应该使用<caption>表格标题标签
+
+ 　  9.<img>应使用 "alt" 属性加以说明
+
+　　10.<strong>、<em>标签 : 需要强调时使用。<strong>标签在搜索引擎中能够得到高度的重视，它能突出关键词，表现重要的内容，<em>标签强调效果仅次于<strong>标签。
+
+　　　  <b>、<i>标签: 只是用于显示效果时使用，在SEO中不会起任何效果。
+
+　　10、文本缩进不要使用特殊符号 &nbsp; 应当使用CSS进行设置。版权符号不要使用特殊符号 &copy; 可以直接使用输入法，拼“banquan”，选择序号5就能打出版权符号©。
+
+　　12、巧妙利用CSS布局，将重要内容的HTML代码放在最前面，最前面的内容被认为是最重要的，优先让“蜘蛛”读取，进行内容关键词抓取。
+
+　　13.重要内容不要用JS输出，因为“蜘蛛”不认识
+
+　　14.尽量少使用iframe框架,因为“蜘蛛”一般不会读取其中的内容
+
+　　15.谨慎使用 display：none ：对于不想显示的文字内容，应当设置z-index或设置到浏览器显示器之外。因为搜索引擎会过滤掉display:none其中的内容。
+
+　　16. 不断精简代码
+
+　　17.js代码如果是操作DOM操作，应尽量放在body结束标签之前，html代码之后。
